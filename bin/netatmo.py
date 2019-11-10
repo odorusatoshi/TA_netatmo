@@ -3,13 +3,16 @@ import requests
 import json
 import subprocess
 
+## 参考にしている元python情報
+# ???
 
 ## ユーザ認証型のAccessToken取得用データ
+# []で指定した箇所を変更
 payload_credential = {'grant_type': 'password',
            'username': "[MAIL ADDRESS]",
            'password': "[PASSWORD]",
-           'client_id':"CLIENT ID]",
-           'client_secret': "CILENT SECRET]",
+           'client_id':"[CLIENT ID]",
+           'client_secret': "[CILENT SECRET]",
            'scope': 'read_station'}
 
 # ユーザ認証型でAccessTokenを取得する
@@ -23,7 +26,8 @@ def get_accessToken(payload_credential):
     except requests.exceptions.HTTPError as error:
         print(error.response.status_code, error.response.text)
 
-# device_idで指定した機器のデータを取得する
+## device_idで指定した機器のデータを取得する
+# [DEVICE ID]で指定した箇所を変更
 # jsonのところで、devicesの結果がリストで返ってくるため[0]で指定している
 def get_deviceData(access_token):
 
