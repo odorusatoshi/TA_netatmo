@@ -16,4 +16,3 @@ python script to collect from netatomo weatherstation's API.
 
  - 'device_id': '(your device_id)'
 
-3. 
